@@ -16,11 +16,25 @@ const isAuth = require("../middleware/passport");
 //   res.send("hello world");
 // });
 
+//@method POST
+//@desc POST A USER
+// @PATH  http://localhost:5000/user/register
+// @Params  Body
 // register
 router.post("/register", registerRules(), validation, controllers.register);
 
+//@method POST
+//@desc POST A USER
+// @PATH  http://localhost:5000/user/login
+// @Params  Body
+// register
 // login
 router.post("/login", loginRules(), validation, controllers.login);
+
+//@method POST
+//@desc GET A USER
+// @PATH  http://localhost:5000/user/current
+// @Params  Body
 // get current user
 router.get("/current", isAuth(), controllers.current);
 

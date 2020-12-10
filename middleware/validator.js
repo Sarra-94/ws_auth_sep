@@ -1,5 +1,6 @@
 const { check, validationResult } = require("express-validator");
 
+// validation register
 exports.registerRules = () => [
   check("name", "name is required").notEmpty(),
   check("lastName", "lastName is required").notEmpty(),
@@ -11,6 +12,7 @@ exports.registerRules = () => [
   }),
 ];
 
+// validation login
 exports.loginRules = () => [
   check("email", "email is required").notEmpty(),
   check("email", "check email again").isEmail(),
